@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receive</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+   <div class = "main_section">
+    <h1>RECEIVE</h1>
+    <div id = "meal-container">
+
+        <!--Loop through  every donated meal and display it-->
+        {% for meal in meals %}
+            <div class = "meal" onclick="highlight_meal(this)"> 
+                <img src = "../static/images/{{meal[3]}}" alt = "Image" id = "mealimage">
+                <h3>{{ meal[2] }}</h3>
+                <h5> Ingredients - {{  meal[4] }}</h5>
+                <h5>Allergies - {{ meal[5] }}</h5>
+            </div>
+        {% endfor %}
+    </div>
+
+    <form action="" id="donate-form">
+        <!--Name Input-->
+        <div class = "input-form">
+            <label for="full-name">Full Name</label>
+            <input type="text" name="full-name" class="form-control" id="full-name" placeholder="Jimmy">
+        </div>
+        <br>
+        <!--Email Input-->
+        <div class = "input-form">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="form-control" id = "email-add" placeholder="jimmym123@yahoo.com">
+        </div>
+        <br>
+        <br>
+        <br>
+        <!--Address Input-->
+        <div class = "input-form">
+            <label for="address-input"> Address </label>
+            <input type="text" name="address-input" class="form-control" id = "address" placeholder="123 Street Name">
+        </div>
+        <br>
+        <!--City Input-->
+        <div class = "input-form">
+            <label for="city-input">City</label>
+            <input type="text" name="city-input" class="form-control" id = "city" placeholder="City-ville">
+        </div>
+
+        <br>
+        <!--State Input-->
+        <div class = "input-form">
+            <label for="state-input">State</label>
+            <input type="text" name="state-input" class="form-control" id = "state" placeholder="State-ville">
+        </div>
+        <br>
+        <!--Zip Code Input-->
+        <div class = "input-form">
+            <label for= "zip-input"> Zip Code </label>
+            <input type="text" name="zip-input" class="form-control" id = "zipcode" placeholder="12345">
+        </div>
+        <br>
+
+        <div id = "confirm_receive">
+
+        </div>
+          
+          <!--Done-->
+          <div class="dropoff_send">
+            <button class="Sbtn" id="send">Receive Food</button>
+         </div>
+         
+         <footer>
+            &copy; 2024 @mealshare
+         </footer>
+        
+    </form>
+
+
+
+   </div>
+   <script type="text/javascript" src = "../static/receive.js"></script> 
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Share</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="icon" href="../static/assets/favicon.png" type="image/x-icon">
+</head>
+<body>
+    
+    <div class = "main_section">
+        <img src="../static/assets/logo.png" alt="Meal Share">
+        <!--Title-->
+        <h3>WE ARE ENDING HUNGER IN OUR COMMUNITY</h3>
+        
+        <!--Description-->
+        <p>World hunger affects millions globally, with 149 million children under five stunted and 45 million wasted due to malnutrition in 2020. The COVID-19 pandemic worsened food insecurity, adding an estimated 100 million people to those facing hunger.</p>
+        
+        <p>MealShare is an application that allows people to make a difference. From delivery people to donators, a member of the community will take the role. </p>
+
+        <!--Donate and Deliver and Recieve-->
+        <div class = "donatedeliver">
+            <button id = "donate-btn" class="Dbtn">DONATE</button>
+            <button id = "receive-btn" class = "Dbtn">RECEIVE</button>
+        </div>
+        
+               
+        <!--Sign Up and Sign In-->
+        <!--<div class = "signin_signup"> 
+            <button id = "signin-btn" class = "Sbtn">SIGN IN</button>
+            <button id = "signup-btn" class = "Sbtn">SIGN UP</button>
+
+        </div>-->
+    </div>
+    <script type="text/javascript" src="{{ url_for('static',filename = 'script.js')}}"></script>
+</body>
+</html>
