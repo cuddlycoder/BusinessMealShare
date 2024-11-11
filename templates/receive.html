@@ -15,9 +15,11 @@
         {% for meal in meals %}
             <div class = "meal" onclick="highlight_meal(this)"> 
                 <img src = "../static/images/{{meal[3]}}" alt = "Image" id = "mealimage">
-                <h3>{{ meal[2] }}</h3>
-                <h5> Ingredients - {{  meal[4] }}</h5>
-                <h5>Allergies - {{ meal[5] }}</h5>
+                <h3> Business Name - {{  meal[0] }}</h3>
+                <h4> Business Email - {{  meal[1] }}</h4>
+                <h4> Business Address - {{  meal[2] }}</h4>
+                <h5> Contents - {{  meal[4] }}</h5>
+                <h6>Allergies - {{ meal[5] }}</h6>
             </div>
         {% endfor %}
     </div>
@@ -25,22 +27,28 @@
     <form action="" id="donate-form">
         <!--Name Input-->
         <div class = "input-form">
-            <label for="full-name">Full Name</label>
-            <input type="text" name="full-name" class="form-control" id="full-name" placeholder="Jimmy">
+            <label for="org-name">Organization Name</label>
+            <input type="text" name="org-name" class="form-control" id="org-name" placeholder="MealShare">
+        </div>
+        <br>
+         <!--Representative Name Input-->
+         <div class = "input-form">
+            <label for="rep-org-name">Representative of Organization Name</label>
+            <input type="text" name="rep-org-name" class="form-control" id="rep-org-name" placeholder="Jamie Mallard">
         </div>
         <br>
         <!--Email Input-->
         <div class = "input-form">
-            <label for="email">Email</label>
-            <input type="email" name="email" class="form-control" id = "email-add" placeholder="jimmym123@yahoo.com">
+            <label for="org-email">Organization Email</label>
+            <input type="email" name="org-email" class="form-control" id = "org-email" placeholder="mealshare@gmail.com">
         </div>
         <br>
         <br>
         <br>
         <!--Address Input-->
         <div class = "input-form">
-            <label for="address-input"> Address </label>
-            <input type="text" name="address-input" class="form-control" id = "address" placeholder="123 Street Name">
+            <label for="org-address"> Organization Address </label>
+            <input type="text" name= "org-address" class="form-control" id = "org-address" placeholder="123 Street Name">
         </div>
         <br>
         <!--City Input-->

@@ -1,4 +1,4 @@
-let chosen_meal = null
+let chosen_content = null
 function highlight_meal(selectedmeal){
     //remove highlight from other meals
     let meals = document.querySelectorAll(".meal")
@@ -8,8 +8,8 @@ function highlight_meal(selectedmeal){
     
     // add highlight class to select meal
     selectedmeal.classList.add("highlight")
-    let mealname = selectedmeal.querySelector("h3")
-    chosen_meal = mealname.textContent
+    let contentname = selectedmeal.querySelector("h5")
+    chosen_content = contentname.textContent
 }
 
 let xhr = null
@@ -22,14 +22,17 @@ getXmlHttpRequestObject = function(){
 }
 function SendReceiveData(e){
     e.preventDefault()
-    let nameinput = document.getElementById("full-name").value
-    console.log(nameinput)
+    let orgnameinput = document.getElementById("org-name").value
+    console.log(orgnameinput)
 
-    let emailinput = document.getElementById("email-add").value
-    console.log(emailinput)
+    let reporgnameinput = document.getElementById("rep-org-name").value
+    console.log(reporgnameinput)
 
-    let address = document.getElementById("address").value
-    console.log(address)
+    let orgemailinput = document.getElementById("org-email").value
+    console.log(orgemailinput)
+
+    let orgaddress = document.getElementById("org-address").value
+    console.log(orgaddress)
 
     let cityinput = document.getElementById("city").value
     console.log(cityinput)
@@ -39,7 +42,7 @@ function SendReceiveData(e){
 
     let zipcode = document.getElementById("zipcode").value
     console.log(zipcode)
-    console.log(chosen_meal)
+    console.log(chosen_content)
 
     let confirmation_receive = document.getElementById("confirm_receive")
     confirmation_receive.innerHTML = ""
@@ -67,10 +70,11 @@ function SendReceiveData(e){
     //attach (staple) data to request
     //JSON IS A DICTIONARY. (NAME OF DATA AND DATA)
     xhr.send(JSON.stringify({
-        "meal-name": chosen_meal,
-        "name": nameinput, 
-        "email": emailinput, 
-        "address": address,
+        "content": chosen_content,
+        "org-name": orgnameinput, 
+        "rep-org-name": reporgnameinput, 
+        "org-email": orgemailinput, 
+        "org-address": orgaddress,
         "city": cityinput, 
         "state": state, 
        "zipcode": zipcode }))
