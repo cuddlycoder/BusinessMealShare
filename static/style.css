@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Beiruti:wght@200..900&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
 .main_section{
     width: 50%;
     text-align: center;
@@ -8,13 +10,23 @@
 h1{
     font-size: 55px;
     word-spacing: 10px;
-    font-family: serif;
-    
-
+    font-family: "Bona Nova SC";
+    font-style: normal;
+    font-weight: 400;
 }
+label{
+    font-family: "Beiruti";
+    font-style: normal;
+    font-weight: 400;
+}
+
+
 
 h3{
     color: rgb(5, 73, 5);
+    font-family: "Bona Nova SC";
+    font-style: normal;
+    font-weight: 400;
 }
 
 
@@ -35,6 +47,16 @@ h3{
     font-size: 15px;
 
 
+}
+
+.send_back{
+    margin: 3%;;
+}
+
+.button{
+    width: 150px;
+    height: 50px;
+    margin: 5%;
 }
 
 #meal-container { 

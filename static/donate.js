@@ -75,6 +75,11 @@ function SendDonateData(e){
 
 }
 
+//Send user to main page (back button)
+document.getElementById("back-donate").addEventListener("click",function(event){
+    window.location.href = "http://127.0.0.1:8000/views/"
+})
+
 
 
 
