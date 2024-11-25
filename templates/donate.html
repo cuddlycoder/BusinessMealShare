@@ -10,66 +10,77 @@
 </head>
 <body>
     <div class = "main_section">
-        <h1>    DONATE    </h1>
+        <div class="content">
+            <h1>    DONATE    </h1>
 
-        <form action="" id="donate-form">
-            <!--Business Name Input-->
-            <div class = "input-form">
-                <label for="b-full-name">Business Full Name</label>
-                <input type="text" name="b-full-name" class="form-control" id="b-full-name" placeholder="Grocery Store">
-            </div>
-            <br>
-            <!--Business Email Input-->
-            <div class = "input-form">
-                <label for="b-email"> Business Email</label>
-                <input type="b-email" name="b-email" class="form-control" id = "b-email" placeholder="grocerystore@yahoo.com">
-            </div>
-            <br>
-            <!--Business Location-->
-            <div class = "input-form">
-                <label for="b-address">Business Current Location *INCLUDE STATE, CITY, AND ZIP*</label>
-                <input type="text" name="b-address" class="form-control" id = "b-address" placeholder="123 Lorem. Ave.">
-            <br>
-            <br>
-            <br>
-            <!--Donation List Input-->
-            <div class = "input-form">
-                <label for="donatelist-input">Donation List</label>
-                <textarea name="donatelist-input" class="form-control" id = "donatelist-input" placeholder="10lbs " rows= "4" cols="10">
-                </textarea>
-            </div>
-            <br>
-            <br>
-            <!--Donation Image Input-->
-            <div class = "input-form">
-                <label for="donation-image">Donation Image</label>
-                <input type="file" name="donation-image" class="form-control" id = "donation-image" accept="image/*">
-            </div>
+            <form action="" id="donate-form">
+                <!--Business Name Input-->
+                <div class = "input-form">
+                    <label for="b-full-name">Business Full Name</label>
+                    <input type="text" name="b-full-name" class="form-control" id="b-full-name" placeholder="Grocery Store">
+                </div>
+                <br>
+                <!--Business Email Input-->
+                <div class = "input-form">
+                    <label for="b-email"> Business Email</label>
+                    <input type="b-email" name="b-email" class="form-control" id = "b-email" placeholder="grocerystore@yahoo.com">
+                </div>
+                <br>
+                <!--Business Location-->
+                <div class = "input-form">
+                    <label for="b-address">Business Current Location *INCLUDE STATE, CITY, AND ZIP*</label>
+                    <input type="text" name="b-address" class="form-control" id = "b-address" placeholder="123 Lorem. Ave.">
+                <br>
+                <br>
+                <br>
+                <!--Donation List Input-->
+                <div class = "input-form">
+                    <label for="donatelist-input">Donation List</label>
+                    <!--<textarea name="donatelist-input" class="form-control" id = "donatelist-input" placeholder="10lbs " rows= "4" cols="10">
+                    </textarea>-->
+                    <p>weight(lbs) Item Name</p>
+                    <ul class="donation-list" id="List">
+                        <div class="list-item" id="list-item">
+                            <input type="text" name="list-item" class="form-control" id = "" placeholder="200lbs">
+                            <input type="text" name="list-item" class="form-control" id = "" placeholder="apples">
+                            
+                        </div>
+                    </ul>
+                    <button type="button" class="btn btn-light">Add Row</button>
+                </div>
+                <br>
+                <br>
+                <!--Donation Image Input-->
+                <div class = "input-form">
+                    <label for="donation-image">Donation Image</label>
+                    <input type="file" name="donation-image" class="form-control" id = "donation-image" accept="image/*">
+                </div>
 
-            <!--Confirmation message-->
-            <div id = "confirmation"></div>
-            <br>
-            <!--Allergies Input-->
-            <div class = "input-form">
-                <label for=allergies-text">Allergies *INPUT ALL ALLERGIES KNOWN*</label>
-                <input type="text" name="allergies-text" class="form-control" id = "alle-rgies" placeholder="*Common Food Allergies* Eggs, Milk, Peanuts, Shellfish, Seasame, Soy, Fruits and Vegetables, and Tree Nuts, and Wheat ">
-            </div>
+                <!--Confirmation message-->
+                <div id = "confirmation"></div>
+                <br>
+                <!--Allergies Input-->
+                <div class = "input-form">
+                    <label for=allergies-text">Allergies *INPUT ALL ALLERGIES KNOWN*</label>
+                    <input type="text" name="allergies-text" class="form-control" id = "alle-rgies" placeholder="*Common Food Allergies* Eggs, Milk, Peanuts, Shellfish, Seasame, Soy, Fruits and Vegetables, and Tree Nuts, and Wheat ">
+                </div>
+                
+            </form>
             
-        </form>
-        
-        <div id = "confirmation_done"></div>
-         
-        <!--Drop-Off and Send-->
-         <div class="send_back">
-            <button type="button" class="btn btn-outline-warning button" id="back-donate">Back</button>
-            <button type="button" class="btn btn-outline-success button" id="send">Send</button>
+            <div id = "confirmation_done"></div>
             
-            
+            <!--Drop-Off and Send-->
+            <div class="send_back">
+                <button type="button" class="btn btn-outline-warning button" id="back-donate">Back</button>
+                <button type="button" class="btn btn-outline-success button" id="send">Send</button>
+                
+                
 
-         </div>
-         <footer>
-            &copy; 2024 @mealshare
-         </footer>
+            </div>
+            <footer>
+                &copy; 2024 @mealshare
+            </footer>
+        </div>
 
     </div>
     <script type="text/javascript" src = "{{url_for('static', filename = 'donate.js')}}"></script>
