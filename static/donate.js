@@ -75,6 +75,24 @@ function SendDonateData(e){
 
 }
 
+document.getElementById("add-row").addEventListener("click",function(event){
+    const list = document.getElementById("List")
+    const div = document.createElement("div")
+    div.class = "list-item"
+    div.id = "list-item"
+    list.appendChild(div)
+    
+
+
+    /*list.innerHTML += `
+    <div class="list-item" id="list-item">
+        <input type="text" name="list-item" class="form-control" id = "item" placeholder="Apples">
+        <input type="text" name="list-item" class="form-control" id = "weight" placeholder="200lbs">
+    </div>
+    `*/
+})
+
+
 //Send user to main page (back button)
 document.getElementById("back-donate").addEventListener("click",function(event){
     window.location.href = "http://127.0.0.1:8000/views/"

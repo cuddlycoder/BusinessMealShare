@@ -108,4 +108,17 @@ h3{
     font-size: 22px;
 }
 
+.list-item{
+    display:flex;
+
+}
+
+#weight{
+    width: 20%;
+    text-align: center;
+}
+#item{
+    text-align: center;
+}
+
 
