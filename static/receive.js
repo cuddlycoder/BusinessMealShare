@@ -84,7 +84,8 @@ function SendReceiveData(e){
 
 //Send user to main page (back button)
 document.getElementById("back-recieve").addEventListener("click",function(event){
-    window.location.href = "http://127.0.0.1:8000/views/"
+    //window.location.href = "http://127.0.0.1:8000/views/"
+    window.location.href = "https://businessmealshare.onrender.com/views/"
 })
 
 

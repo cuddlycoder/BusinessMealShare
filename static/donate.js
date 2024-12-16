@@ -19,8 +19,11 @@ function SendDonateData(e){
     let baddress = document.getElementById("b-address").value
     console.log(baddress)
 
-    let dlist = document.getElementById("item").value
-    console.log(dlist)
+    let dlist = document.getElementsByClassName("food-name")
+    Array.from(dlist).forEach(element => {
+        console.log(element.value)
+    });
+    //console.log(dlist)
 
     let dimageinput = document.getElementById("donation-image")
     console.log(dimageinput)
@@ -59,7 +62,8 @@ function SendDonateData(e){
     xhr = getXmlHttpRequestObject()
 
     //Send postresquest
-    xhr.open("POST","http://127.0.0.1:8000/views/donate",true)
+    //xhr.open("POST","http://127.0.0.1:8000/views/donate",true)
+    xhr.open("POST","https://businessmealshare.onrender.com/views/donate",true)
     xhr.onload = function(){
         if (xhr.status === 200){
             confirmation_done.innerHTML = "Your information has been sent! Thank you!"
@@ -87,8 +91,8 @@ document.getElementById("add-row").addEventListener("click",function(event){
     weightinput.type = "text"
     weightinput.name = "list-item"
     nameinput.name = "list-item"
-    nameinput.className = "form-control food-item"
-    weightinput.className = "form-control food-item"
+    nameinput.className = "form-control food-name"
+    weightinput.className = "form-control food-weight"
     weightinput.id = "weight"
     nameinput.id = "item"
     nameinput.placeholder = "Apples"
@@ -113,7 +117,8 @@ document.getElementById("add-row").addEventListener("click",function(event){
 
 //Send user to main page (back button)
 document.getElementById("back-donate").addEventListener("click",function(event){
-    window.location.href = "http://127.0.0.1:8000/views/"
+    //window.location.href = "http://127.0.0.1:8000/views/"
+    window.location.href = "https://businessmealshare.onrender.com/views/"
 })
 
 
