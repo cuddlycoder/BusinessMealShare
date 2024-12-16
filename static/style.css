@@ -6,30 +6,35 @@
     
 }
 .content{
-    width: 50%;
+    width: 50%;     
     text-align: center;
     margin: 0 auto;
 }
 body,*{
-    background-color: #e6f9e6;
+    background-color: #e5fee8;
 }
 h1{
-    font-size: 55px;
     word-spacing: 10px;
     font-family: "Bona Nova SC";
     font-style: normal;
-    font-weight: 400;
 }
+
+#donate{
+    font-size: 10%; 
+}
+
+
 label{
     font-family: "Beiruti";
     font-style: normal;
     font-weight: 400;
+    font-size: 20px;
 }
 
 
 
 h3{
-    color: rgb(5, 73, 5);
+    color: #526E48;
     font-family: "Bona Nova SC";
     font-style: normal;
     font-weight: 400;
@@ -37,16 +42,17 @@ h3{
 
 
 .Dbtn{
-    background-color: rgb(144, 226, 135);
+    background-color: #D5ED9F;
     width: 150px;
     height: 45px;
     margin: 2% 6%;
     border-radius: 20px;
     font-size: 15px;
+    
 }
 
 .Sbtn{
-    background-color: rgb(144, 226, 135);
+    background-color: #D5ED9F;
     width: 200px;
     height: 45px;
     margin: 4% 6%;
@@ -121,4 +127,9 @@ h3{
     text-align: center;
 }
 
+#send,#back-donate{
+    font-family: "Beiruti";
+    font-style: normal;
+    font-size: 19px;
+}
 

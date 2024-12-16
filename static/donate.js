@@ -19,7 +19,7 @@ function SendDonateData(e){
     let baddress = document.getElementById("b-address").value
     console.log(baddress)
 
-    let dlist = document.getElementById("donatelist-input").value
+    let dlist = document.getElementById("item").value
     console.log(dlist)
 
     let dimageinput = document.getElementById("donation-image")
@@ -78,9 +78,27 @@ function SendDonateData(e){
 document.getElementById("add-row").addEventListener("click",function(event){
     const list = document.getElementById("List")
     const div = document.createElement("div")
-    div.class = "list-item"
+    div.className = "list-item"
     div.id = "list-item"
     list.appendChild(div)
+    const nameinput = document.createElement("input")
+    const weightinput = document.createElement("input")
+    nameinput.type = "text"
+    weightinput.type = "text"
+    weightinput.name = "list-item"
+    nameinput.name = "list-item"
+    nameinput.className = "form-control food-item"
+    weightinput.className = "form-control food-item"
+    weightinput.id = "weight"
+    nameinput.id = "item"
+    nameinput.placeholder = "Apples"
+    weightinput.placeholder = "50lbs"
+    
+    
+    div.appendChild(nameinput)
+    div.appendChild(weightinput)
+    
+    
     
 
 
