@@ -1,3 +1,5 @@
+const local = true
+
 // Create object to send requests//
 let xhr = null
 getXmlHttpRequestObject = function(){
@@ -8,7 +10,9 @@ getXmlHttpRequestObject = function(){
     return xhr
 }
 function SendDonateData(e){ 
-    e.preventDefault()
+    e.preventDefault() 
+    let foodname = []
+    let foodweight = []
     //get input values from input field//
     let bfullname = document.getElementById("b-full-name").value
     console.log(bfullname)
@@ -19,11 +23,17 @@ function SendDonateData(e){
     let baddress = document.getElementById("b-address").value
     console.log(baddress)
 
-    let dlist = document.getElementsByClassName("food-name")
-    Array.from(dlist).forEach(element => {
+    let dname = document.getElementsByClassName("food-name")
+    let dweight = document.getElementsByClassName("food-weight")
+    Array.from(dname).forEach(element => {
         console.log(element.value)
+        foodname.push(element.value)
     });
-    //console.log(dlist)
+    Array.from(dweight).forEach(element => {
+        console.log(element.value)
+        foodweight.push(element.value)
+    });
+    //console.log(dname)
 
     let dimageinput = document.getElementById("donation-image")
     console.log(dimageinput)
@@ -54,7 +64,8 @@ function SendDonateData(e){
     formdata.append("data",JSON.stringify({ "business-name": bfullname, 
                                             "business-email": bemailinput,
                                             "business-location": baddress,  
-                                            "donation-name": dlist,  
+                                            "donation-name": foodname, 
+                                            "donation-weight": foodweight, 
                                             "allergies": allergies }))
 
     //Send Data to backend using PostRequest method  
@@ -62,8 +73,14 @@ function SendDonateData(e){
     xhr = getXmlHttpRequestObject()
 
     //Send postresquest
-    //xhr.open("POST","http://127.0.0.1:8000/views/donate",true)
-    xhr.open("POST","https://businessmealshare.onrender.com/views/donate",true)
+    if(local){
+        xhr.open("POST","http://127.0.0.1:8000/views/donate",true)
+    }
+    else{
+        xhr.open("POST","https://businessmealshare.onrender.com/views/donate",true)
+    }
+    
+    
     xhr.onload = function(){
         if (xhr.status === 200){
             confirmation_done.innerHTML = "Your information has been sent! Thank you!"
@@ -117,8 +134,14 @@ document.getElementById("add-row").addEventListener("click",function(event){
 
 //Send user to main page (back button)
 document.getElementById("back-donate").addEventListener("click",function(event){
-    //window.location.href = "http://127.0.0.1:8000/views/"
-    window.location.href = "https://businessmealshare.onrender.com/views/"
+    if(local){
+        window.location.href = "http://127.0.0.1:8000/views/"
+    }
+    else{
+         window.location.href = "https://businessmealshare.onrender.com/views/"
+         
+    }
+   
 })
 
 

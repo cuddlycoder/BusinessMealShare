@@ -17,11 +17,12 @@
             {% for meal in meals %}
                 <div class = "meal" onclick="highlight_meal(this)"> 
                     <img src = "../static/images/{{meal[3]}}" alt = "Image" id = "mealimage">
-                    <h3> Business Name - {{  meal[0] }}</h3>
-                    <h4> Business Email - {{  meal[1] }}</h4>
-                    <h4> Business Address - {{  meal[2] }}</h4>
-                    <h5> Contents - {{  meal[4] }}</h5>
-                    <h6>Allergies - {{ meal[5] }}</h6>
+                    <h3> {{  meal[0] }}</h3>
+                    <h4>{{  meal[1] }}</h4>
+                    <h4>{{  meal[2] }}</h4>
+                    <h5>{{  meal[4] }}</h5>
+                    <h6>{{ meal[5] }}</h6>
+                    <h6>Allergies - {{ meal[6] }}</h6>
                 </div>
             {% endfor %}
         </div>

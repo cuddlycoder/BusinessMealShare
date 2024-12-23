@@ -1,3 +1,5 @@
+const local = true
+
 let chosen_content = null
 function highlight_meal(selectedmeal){
     //remove highlight from other meals
@@ -52,7 +54,12 @@ function SendReceiveData(e){
     xhr = getXmlHttpRequestObject()
 
     //Send postresquest
-    xhr.open("POST","http://127.0.0.1:8000/views/receive",true)
+    if(local){
+        xhr.open("POST","http://127.0.0.1:8000/views/receive",true)
+    }
+    else{
+        xhr.open("POST","http://127.0.0.1:8000/views/receive",true)
+    }
     xhr.onload = function(){
         if (xhr.status === 200){
             confirmation_receive.innerHTML = "Your information has been sent! Thank you!"
@@ -84,8 +91,12 @@ function SendReceiveData(e){
 
 //Send user to main page (back button)
 document.getElementById("back-recieve").addEventListener("click",function(event){
-    //window.location.href = "http://127.0.0.1:8000/views/"
-    window.location.href = "https://businessmealshare.onrender.com/views/"
+    if(local){
+       window.location.href = "http://127.0.0.1:8000/views/" 
+    }
+    else{
+        window.location.href = "https://businessmealshare.onrender.com/views/"
+    }
 })
 
 

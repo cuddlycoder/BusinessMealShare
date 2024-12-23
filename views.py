@@ -35,10 +35,11 @@ def donate():
         bname = pars_data.get("business-name")
         bemail = pars_data.get("business-email")
         blocation = pars_data.get("business-location")
-        d_content = pars_data.get("donation-name")
+        d_name = pars_data.get("donation-name")
+        d_weight = pars_data.get("donation-weight")
         allergies = pars_data.get("allergies")
 
-        donatedfood = [bname, bemail, blocation, image_name, d_content, allergies]
+        donatedfood = [bname, bemail, blocation, image_name, d_name, d_weight, allergies]
         foods.append(donatedfood)
     return render_template("donate.html")
 
