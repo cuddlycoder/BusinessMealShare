@@ -1,3 +1,5 @@
+
+
 //Allows local link and production link to run depending on link
 const local = true
 //Send user to donate page
