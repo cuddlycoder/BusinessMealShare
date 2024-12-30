@@ -108,25 +108,23 @@ document.getElementById("add-row").addEventListener("click",function(event){
     weightinput.type = "text"
     weightinput.name = "list-item"
     nameinput.name = "list-item"
-    nameinput.className = "form-control food-name"
-    weightinput.className = "form-control food-weight"
+    nameinput.className = "form-control food-item"
+    weightinput.className = "form-control food-item"
     weightinput.id = "weight"
     nameinput.id = "item"
     nameinput.placeholder = "Apples"
     weightinput.placeholder = "50lbs"
-
-    
         
-    
-    
+        
     div.appendChild(nameinput)
     div.appendChild(weightinput)
     
+
+    
     
     
 
-
-    /*list.innerHTML += `
+/*list.innerHTML += `
     <div class="list-item" id="list-item">
         <input type="text" name="list-item" class="form-control" id = "item" placeholder="Apples">
         <input type="text" name="list-item" class="form-control" id = "weight" placeholder="200lbs">
@@ -146,8 +144,5 @@ document.getElementById("back-donate").addEventListener("click",function(event){
     }
    
 })
-
-
-
 
 document.getElementById("send").addEventListener("click", SendDonateData)
