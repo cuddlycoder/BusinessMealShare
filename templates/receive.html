@@ -11,6 +11,10 @@
    <div class = "main_section">
     <div class="content">
         <h1>RECEIVE</h1>
+        <br>
+        <h3>Donation Options</h3>
+        <h4 class="label">Choose what donation you will accept</h4>
+        <br>
         <div id = "meal-container">
     
             <!--Loop through  every donated meal and display it-->
@@ -26,13 +30,18 @@
                 </div>
             {% endfor %}
         </div>
-    
+        <br>
+        <h3>Organization Information</h2>
+        <br>
         <form action="" id="donate-form">
             <!--Name Input-->
             <div class = "input-form">
                 <label for="org-name">Organization Name</label>
                 <input type="text" name="org-name" class="form-control" id="org-name" placeholder="MealShare">
             </div>
+            <br>
+            <br>
+            <h3>Contact</h3>
             <br>
              <!--Representative Name Input-->
              <div class = "input-form">
@@ -47,6 +56,7 @@
             </div>
             <br>
             <br>
+            <h3>Location</h3>
             <br>
             <!--Address Input-->
             <div class = "input-form">
@@ -81,7 +91,7 @@
               <!--Done-->
               <div class="dropoff_send">
                 <button type="button" class="btn btn-outline-warning button" id="back-recieve">Back</button>
-                <button type="button" class="btn btn-outline-success button" id="send">Receive Food</button>
+                <button type="button" class="btn btn-outline-success button" id="send">Done</button>
              </div>
              
              <footer>

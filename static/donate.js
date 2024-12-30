@@ -114,6 +114,9 @@ document.getElementById("add-row").addEventListener("click",function(event){
     nameinput.id = "item"
     nameinput.placeholder = "Apples"
     weightinput.placeholder = "50lbs"
+
+    
+        
     
     
     div.appendChild(nameinput)
