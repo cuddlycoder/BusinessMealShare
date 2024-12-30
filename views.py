@@ -50,7 +50,7 @@ def receive():
     if request.method == "POST":
         data = request.get_json()
         print(data)  
-    return render_template("receive.html",meals = foods)
+    return render_template("receive.html",meals = foods,foodnames = foods[4], foodweights = foods[5])
 
 @views.route("/login")
 def login():
