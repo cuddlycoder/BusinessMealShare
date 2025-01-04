@@ -1,3 +1,4 @@
+
 const local = true
 
 // Create object to send requests//
@@ -114,11 +115,16 @@ document.getElementById("add-row").addEventListener("click",function(event){
     nameinput.id = "item"
     nameinput.placeholder = "Apples"
     weightinput.placeholder = "50lbs"
-        
-        
+           
     div.appendChild(nameinput)
     div.appendChild(weightinput)
     
+    
+document.getElementById("delete-row").addEventListener("click", function() {
+    list.removeChild(div);
+});
+div.appendChild(div)
+
 
     
     

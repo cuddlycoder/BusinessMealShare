@@ -9,28 +9,25 @@
 </head>
 <body>
    <div class = "main_section">
-    <div class="content">
+    <div class="contentr">
         <h1>RECEIVE</h1>
         <br>
         <h3>Donation Options</h3>
         <h4 class="label">Choose what donation you will accept</h4>
         <br>
-        <div id = "meal-container">
+        <div id="meal-container">
     
             <!--Loop through  every donated meal and display it-->
             {% for meal in meals %}
-                <div class = "meal" onclick="highlight_meal(this)"> 
-                    <img src = "../static/images/{{meal[3]}}" alt = "Image" id = "mealimage">
-                    <h3> {{  meal[0] }}</h3>
-                    <h4>{{  meal[1] }}</h4>
-                    <h4>{{  meal[2] }}</h4>
-                    <!--<h5>{{  meal[4] }}</h5>
-                    <h6>{{ meal[5] }}</h6>-->
-                    {% for foodname,foodweight in zip(foodnames,foodweights) %}
-                        <h5>{{ foodname }} - {{ foodweight }}lbs (pounds) </h5>
-                    (% endfor %)
-                    <h6>Allergies - {{ meal[6] }}</h6>
-                </div>
+            <div class = "meal" onclick="highlight_meal(this)"> 
+                <img class="datar" src = "../static/images/{{meal[3]}}" alt = "Image" id = "mealimage">
+                <h3 class="datar"> {{  meal[0] }}</h3>
+                <h4 class="datar">{{  meal[1] }}</h4>
+                <h4 class="datar">{{  meal[2] }}</h4>
+                <!--<h5 class="datar">{{  meal[4] }}</h5>
+                <h6 class="datar">{{ meal[4] }}</h6>-->
+                <h6 class="datar">Allergies - {{ meal[5] }}</h6>
+            </div>
             {% endfor %}
         </div>
         <br>

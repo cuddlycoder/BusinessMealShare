@@ -35,22 +35,22 @@ def donate():
         bname = pars_data.get("business-name")
         bemail = pars_data.get("business-email")
         blocation = pars_data.get("business-location")
-        d_name = pars_data.get("donation-name")
-        d_weight = pars_data.get("donation-weight")
+        d_content = pars_data.get("donation-name")
         allergies = pars_data.get("allergies")
 
-        donatedfood = [bname, bemail, blocation, image_name, d_name, d_weight, allergies]
+        donatedfood = [bname, bemail, blocation, image_name, d_content, allergies]
         foods.append(donatedfood)
     return render_template("donate.html")
 
 @views.route("/receive", methods = ["POST","GET"])
 def receive():
     global foods
+    test = ["Python","JavaScript","HTML"]
     #recieve data from front end
     if request.method == "POST":
         data = request.get_json()
         print(data)  
-    return render_template("receive.html",meals = foods,foodnames = foods[4], foodweights = foods[5])
+    return render_template("receive.html",meals = foods,donations = test)
 
 @views.route("/login")
 def login():

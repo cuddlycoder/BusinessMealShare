@@ -1,5 +1,3 @@
-# gives acess to Flask and views.py file
-# Flask is a python module you to host a webpage and write backend code.
 from flask import Flask
 from views import views
 import os 
