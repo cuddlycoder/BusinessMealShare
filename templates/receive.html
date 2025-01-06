@@ -25,9 +25,10 @@
                 <h4 class="datar">{{  meal[1] }}</h4>
                 <h4 class="datar">{{  meal[2] }}</h4>
                 {% for foodname, foodweight in zip(meal[4],meal[5]) %}
-                    <h4 class="datar">{{foodname}} - {{foodweight}}lbs (pounds) </h4>
+                    <h5 class="datar">{{foodname}} - {{foodweight}}lbs (pounds) </h5>
                 {% endfor %}
                 <h6 class="datar">Allergies - {{ meal[6] }}</h6>
+                <span hidden>{{meal[7]}}</span>
             </div>
             {% endfor %}
         </div>

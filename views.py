@@ -25,7 +25,7 @@ def donate():
         #Saves image name
         image_name = file.filename
 
-        #Gets json darta
+        #Gets json data
         JSON_data = request.form.get("data")
         print(JSON_data)
         
@@ -38,8 +38,9 @@ def donate():
         d_content = pars_data.get("donation-name")
         d_weight = pars_data.get("donation-weight")
         allergies = pars_data.get("allergies")
+        id = pars_data.get("id")
 
-        donatedfood = [bname, bemail, blocation, image_name, d_content, d_weight, allergies]
+        donatedfood = [bname, bemail, blocation, image_name, d_content, d_weight, allergies, id]
         foods.append(donatedfood)
     return render_template("donate.html")
 
@@ -49,7 +50,14 @@ def receive():
     #recieve data from front end
     if request.method == "POST":
         data = request.get_json()
-        print(data)  
+        print(data)
+        id = data["content"]
+        #Looking to see if id of donation matches id that we have got then removing that whole donation from the foods list because user already received it.
+        for donation in foods:
+            if donation[7] == id:
+                print("DELETED")
+                foods.remove(donation)
+        return render_template("receive.html",meals = foods,zip = zip)
     return render_template("receive.html",meals = foods,zip = zip)
 
 @views.route("/login")

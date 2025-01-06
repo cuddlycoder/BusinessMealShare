@@ -49,6 +49,9 @@ function SendDonateData(e) {
     let allergies = document.getElementById("alle-rgies").value;
     console.log(allergies);
 
+    let id = Math.floor(Math.random()* 1000000)
+    console.log(id)
+
     let confirm_message = document.getElementById("confirmation");
     let confirmation_done = document.getElementById("confirmation_done");
 
@@ -72,7 +75,8 @@ function SendDonateData(e) {
         "business-location": baddress,
         "donation-name": foodname,
         "donation-weight": foodweight,
-        "allergies": allergies
+        "allergies": allergies,
+        "id" : id
     }));
 
     // Send Data to backend using POST request method

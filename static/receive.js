@@ -10,9 +10,11 @@ function highlight_meal(selectedmeal){
     
     // add highlight class to select meal
     selectedmeal.classList.add("highlight")
-    let contentname = selectedmeal.querySelector("h5")
+    let contentname = selectedmeal.querySelector("span")
     chosen_content = contentname.textContent
+    console.log(chosen_content)
 }
+
 
 let xhr = null
 getXmlHttpRequestObject = function(){
@@ -58,7 +60,7 @@ function SendReceiveData(e){
         xhr.open("POST","http://127.0.0.1:8000/views/receive",true)
     }
     else{
-        xhr.open("POST","http://127.0.0.1:8000/views/receive",true)
+        xhr.open("POST","https://businessmealshare.onrender.com/views/receive",true)
     }
     xhr.onload = function(){
         if (xhr.status === 200){
