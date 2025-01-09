@@ -52,12 +52,12 @@ def receive():
         data = request.get_json()
         print(data)
         id = data["content"]
+        id = int(id)
         #Looking to see if id of donation matches id that we have got then removing that whole donation from the foods list because user already received it.
         for donation in foods:
-            if donation[7] == id:
+            if id in donation:
                 print("DELETED")
                 foods.remove(donation)
-        return render_template("receive.html",meals = foods,zip = zip)
     return render_template("receive.html",meals = foods,zip = zip)
 
 @views.route("/login")
