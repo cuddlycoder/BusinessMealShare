@@ -1,4 +1,4 @@
-const local = true;
+const local = false;
 
 // Create object to send requests
 let xhr = null;

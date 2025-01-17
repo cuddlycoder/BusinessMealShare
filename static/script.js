@@ -1,5 +1,5 @@
 //Allows local link and production link to run depending on link
-const local = true
+const local = false
 //Send user to donate page
 document.getElementById("donate-btn").addEventListener("click",function(event){
     if(local){
