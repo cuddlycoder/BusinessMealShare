@@ -1,4 +1,4 @@
-const local = false
+const local = true
 
 let chosen_content = null
 function highlight_meal(selectedmeal){
@@ -12,7 +12,7 @@ function highlight_meal(selectedmeal){
     selectedmeal.classList.add("highlight")
     let contentname = selectedmeal.querySelector("span")
     chosen_content = contentname.textContent
-    console.log(chosen_content)
+    //console.log(chosen_content)
 }
 
 
@@ -108,27 +108,5 @@ document.getElementById("back-recieve").addEventListener("click",function(event)
 
 document.getElementById("send").addEventListener("click", SendReceiveData)
 
-emailjs.init("U0zlwRKCgaJPFE8jx")
+//emailjs.init()
 
-async function SendEmail(recipienteEmail, subject, message){
-    try{
-        const emailtemplate = {
-            email_to: recipienteEmail, 
-            subject: subject,
-            message: message
-        }
-        const response = await emailjs.send(
-            "Service_Id",
-            "Template_Id",
-            emailtemplate
-        )
-        if (response.status == 200){
-            console.log("Email sent. You will receive it shortly")
-            return true
-        }
-    }
-    catch(error){
-        console.error("Email couldn't be sent", error)
-        throw error 
-    }
-}
