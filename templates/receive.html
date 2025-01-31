@@ -30,16 +30,22 @@
                 {% endfor %}
                 <h6 class="datar">Allergies - {{ meal[6] }}</h6>
                 <span hidden>{{meal[7]}}</span>
+                <div id="deliveryemail" data-var="{{ meal[1] }}"></div>
+                <div id="food" data-var="{{ meal[4] }}"></div>
+                <div id="lbs" data-var="{{ meal[5] }}"></div>
+
+
+
             </div>
             {% endfor %}
         </div>
         <br>
-        <h3>Organization Information</h2>
+        <h3>Non-Profit Organization Information</h2>
         <br>
         <form action="" id="donate-form">
             <!--Name Input-->
             <div class = "input-form">
-                <label for="org-name">Organization Name</label>
+                <label for="org-name">Non-Profit Organization Name</label>
                 <input type="text" name="org-name" class="form-control" id="org-name" placeholder="MealShare">
             </div>
             <br>
@@ -63,7 +69,7 @@
             <br>
             <!--Address Input-->
             <div class = "input-form">
-                <label for="org-address"> Organization Address </label>
+                <label for="org-address"> Non-Profit Organization Address </label>
                 <input type="text" name= "org-address" class="form-control" id = "org-address" placeholder="123 Street Name">
             </div>
             <br>
@@ -140,8 +146,19 @@
     }
     async function Send(){
         let receiveremail = document.getElementById("org-email").value
-        const result = await SendEmail(receiveremail, "Delivery Confirmation", "Thank you for choosing MealShare! The donation that you chose will be delivered to you soon!")
-        console.log(result)
+        let orgname = document.getElementById("org-name").value
+        let orgrep = document.getElementById("rep-org-name").value
+        let address1 = document.getElementById("org-address").value
+        let address2 = document.getElementById("city").value
+        let address3 = document.getElementById("state").value
+        let address4 = document.getElementById("zipcode").value
+        let deliveryemail = document.getElementById("deliveryemail").dataset.var
+        let food = document.getElementById("food").dataset.var
+        let foodlbs = document.getElementById("lbs").dataset.var
+        const receiveemail = await SendEmail(receiveremail, "Delivery Confirmation", "Thank you for choosing MealShare! The donation that you chose will be delivered to you soon!")
+        console.log(receiveremail)
+        const deliveremail = await SendEmail(deliveryemail, "Donation Accepted", "Thank you for choosing MealShare! Your donation of "+ food+foodlbs +" has been accepted by "+ orgname +". You need to deliver it to "+ address1+ " "+address2+" "+address3+" "+address4 +". Please contact "+ orgrep +" at "+ receiveemail +" for more information!")
+        console.log(deliveremail)
     }
 document.getElementById("send").addEventListener("click", Send)
     </script>

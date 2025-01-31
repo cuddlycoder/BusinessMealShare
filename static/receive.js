@@ -12,7 +12,7 @@ function highlight_meal(selectedmeal){
     selectedmeal.classList.add("highlight")
     let contentname = selectedmeal.querySelector("span")
     chosen_content = contentname.textContent
-    //console.log(chosen_content)
+    console.log(chosen_content)
 }
 
 
