@@ -156,8 +156,8 @@
         let food = document.getElementById("food").dataset.var
         let foodlbs = document.getElementById("lbs").dataset.var
         const receiveemail = await SendEmail(receiveremail, "Delivery Confirmation", "Thank you for choosing MealShare! The donation that you chose will be delivered to you soon!")
-        console.log(receiveremail)
-        const deliveremail = await SendEmail(deliveryemail, "Donation Accepted", "Thank you for choosing MealShare! Your donation of "+ food+foodlbs +" has been accepted by "+ orgname +". You need to deliver it to "+ address1+ " "+address2+" "+address3+" "+address4 +". Please contact "+ orgrep +" at "+ receiveemail +" for more information!")
+        console.log(receiveemail)
+        const deliveremail = await SendEmail(deliveryemail, "Donation Accepted", "Thank you for choosing MealShare! Your donation of "+ food+foodlbs +" has been accepted by "+ orgname +". You need to deliver it to "+ address1+ " "+address2+" "+address3+" "+address4 +". Please contact "+ orgrep +" at "+ receiveremail +" for more information!")
         console.log(deliveremail)
     }
 document.getElementById("send").addEventListener("click", Send)
