@@ -1,4 +1,4 @@
-const local = true
+const local = false
 
 let chosen_content = null
 function highlight_meal(selectedmeal){
