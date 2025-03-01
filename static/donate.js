@@ -109,6 +109,7 @@ document.getElementById("add-row").addEventListener("click", function (event) {
 
     const nameinput = document.createElement("input");
     const weightinput = document.createElement("input");
+    //const deletebutton = document.createElement("button")
 
     nameinput.type = "text";
     weightinput.type = "text";
@@ -120,9 +121,13 @@ document.getElementById("add-row").addEventListener("click", function (event) {
     nameinput.id = "item";
     nameinput.placeholder = "Apples";
     weightinput.placeholder = "50lbs";
-
+    //deletebutton.className = "deletebutton"
+    //deletebutton.type = "button"
+    //deletebutton.onclick = () => deleterow(event)
+    
     div.appendChild(nameinput);
     div.appendChild(weightinput);
+    //div.appendChild(deletebutton);
 
     list.appendChild(div);
 });
@@ -144,3 +149,25 @@ document.getElementById("back-donate").addEventListener("click", function (event
 });
 
 document.getElementById("send").addEventListener("click", SendDonateData);
+
+
+function deleterow(event){
+    console.log("Working")
+    console.log(event.target)
+}
+
+
+function deleter(){
+    // Get all delete buttons
+    const deleteButtons = document.querySelectorAll(".deletebutton");
+
+    // Add event listener to each delete button
+    deleteButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            console.log("Working")
+            // Get the parent li element and remove it
+            const row = button.parentElement;
+            row.remove();
+        });
+    });
+}

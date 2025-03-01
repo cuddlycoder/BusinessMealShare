@@ -1,8 +1,33 @@
 from flask import Blueprint, render_template,request
-import json
+import json, sqlite3
 views = Blueprint(__name__, "views")
 
 foods = []
+
+#Insert donations in database
+def insert_donation(name, email, location, imagename, dcontent, dweight, allergies, contentid):
+    connection = sqlite3.connect("BusinessMealShareDatabase.db")
+    cursor = connection.cursor()
+    cursor.execute('''
+        INSERT INTO Donator (BusinessName, BusinessEmail, BusinessLocation, ItemsName, ItemsWeight, ItemsImage, Allergies, ContentId)
+        VALUES (?,?,?,?,?,?,?,?)
+    ''', (name, email, location, dcontent, dweight, imagename, allergies, contentid))
+
+    connection.commit()
+    connection.close()
+
+
+#Insert recievers in database
+def insert_recievers(orgname, orgrep, email, location, contentid):
+    connection = sqlite3.connect("BusinessMealShareDatabase.db")
+    cursor = connection.cursor()
+    cursor.execute('''
+        INSERT INTO Receiver (Name, Representative, Email, Address, DonationId)
+        VALUES (?,?,?,?,?)
+    ''', (orgname, orgrep, email, location, contentid))
+
+    connection.commit()
+    connection.close()
 
 
 #Renders each page
@@ -42,6 +67,10 @@ def donate():
 
         donatedfood = [bname, bemail, blocation, image_name, d_content, d_weight, allergies, id]
         foods.append(donatedfood)
+        content = str(d_content)
+        weight = str(d_weight)
+        content_id = int(id)
+        insert_donation(bname, bemail, blocation, image_name, content, weight, allergies, content_id)
     return render_template("donate.html")
 
 @views.route("/receive", methods = ["POST","GET"])
@@ -53,6 +82,12 @@ def receive():
         print(data)
         id = data["content"]
         id = int(id)
+        orgname = data["org-name"]
+        orgrep = data["rep-org-name"]
+        orgemail = data["org-email"]
+        orgaddress = data["org-address"] + data["city"] + data["state"] + data["zipcode"]
+        insert_recievers(orgname, orgrep, orgemail, orgaddress, id)
+
         #Looking to see if id of donation matches id that we have got then removing that whole donation from the foods list because user already received it.
         for donation in foods:
             if id in donation:
